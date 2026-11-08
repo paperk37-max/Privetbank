@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="de"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#050506"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><meta name="apple-mobile-web-app-title" content="Meridian"><link rel="apple-touch-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAIAAACyr5FlAAACfElEQVR42u3dyZWDQAxAQZ0UHGE5AKfMHHwFvLAMLdUPAdWzmzamI6WVwiUQHIJDcAgOwSE4BIfgEByCQ4JDcAgOwSE4BIfgEByCQ3BIcAgOwSE4BIfgEByCQ3AIDgkOwSE4BIfgEByCQ3AIDsEhOCQ4BIfgEByCQ3AIjhF7PB4uAhzLMuZ55gOOZRmv+IBjWQYfcGzJ4AOOLRl8dMex+G3CBxyr6ww+uuPYFsBHXxyfzJ6Pjjg+nzofQYb9Dzh+nHRnH0EGH61x7J9uTx9BBh9NcRw70W4+ggw+2uH4bYrTNPFRHMfPMp7PJx+VceyR8YqPmjj2y+CjJo6jZPBRDcexMviog+PAbxM+SuE4dp3BRx0cZ6xA+aiA47x7Ez7GxnH2XSsfQYb9j1I4rtzp6uwjyOCjCI7rZXT2EWTwMTyO/5XR00eQwcfAOO4jo5uPIIOPIXHcU0YfH0EGH4PhuL+MDj6CDD58cpBhzWHN4W7F3Yp9DvsccAzlww4pH91lpF9lyaiAIz3PAcc9fXgSjA8yBseRnj6H4w4+/G8l+SCjGo70X1k4rvdBRhEc6f0ccFzmg4xqONI7weC40oe3CXoPqRVoGxzpDcZwnOeDjOI40qkJcFw/Reet8EFGAxzpjDc4zp6r0yH5IKMljnQiNRzHTtpZ9skHGXB8MXUymuJ4O3syWuPYEEAGHKs+yIBj1QcZcLz30VwGHFagcHzpgww4ln2QAceqDxcBDsEhOASH4BAcgkNwCA7BIcEhOASH4BAcgkNwCA7BITgEhwSH4BAcgkNwCA7BITgEh+CQ4BAcgkNwCA7BITgEh+AQHBIcgkNwCA7BITgEh4brDzxPR9ONzkyGAAAAAElFTkSuQmCC">
+<title>Meridian Privatbank · Online-Banking</title>
+<style>
+:root{--n:#0b2a4a;--n2:#16467a;--bg:#eef1f5;--c:#fff;--t:#16212e;--m:#6b7788;--l:#e1e6ed;--g:#127a4a;--h:56px}
+*{box-sizing:border-box;margin:0}
+body{font:15px/1.45 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--t);-webkit-text-size-adjust:100%}
+.demo{position:sticky;top:0;z-index:40;height:26px;background:#e6ebf1;color:#3d4b5c;border-bottom:1px solid #d3dbe5;font:500 12.5px/26px -apple-system,Segoe UI,sans-serif;text-align:center;overflow:hidden;white-space:nowrap}
+header{position:sticky;top:0;z-index:40;height:56px;background:var(--n);color:#fff;display:flex;align-items:center;gap:12px;padding:0 16px}
+header b{font-size:18px;letter-spacing:.01em}header b span{font-weight:400;opacity:.8}
+#burger{display:none;background:none;border:0;color:#fff;font-size:26px;cursor:pointer}
+.pill{margin-left:auto;border:1px solid #fff9;border-radius:20px;padding:2px 10px;font-size:12px;font-weight:600}
+#nav{position:fixed;top:var(--h);bottom:0;left:0;width:250px;background:var(--c);border-right:1px solid var(--l);padding:16px 12px;z-index:30;transition:transform .2s;overflow:auto}
+#nav button{display:block;width:100%;text-align:left;padding:12px 14px;margin-bottom:4px;border:0;background:none;border-radius:10px;font:inherit;font-weight:500;color:var(--t);cursor:pointer}
+#nav button.on{background:var(--n);color:#fff}
+#nav p{margin:18px 8px;font-size:12px;color:var(--m)}
+#bd{display:none;position:fixed;inset:var(--h) 0 0;background:#0007;z-index:25}
+main{margin-left:250px;padding:24px;max-width:1150px}
+h2{font-size:22px;margin-bottom:14px;color:var(--n)}
+.card{background:var(--c);border-radius:14px;box-shadow:0 1px 3px #0b2a4a14,0 6px 18px #0b2a4a0d;padding:16px;margin-bottom:16px}
+.hero{background:linear-gradient(135deg,var(--n),var(--n2));color:#fff;border-radius:16px;padding:22px;margin-bottom:16px}
+.hero h1{font-size:clamp(32px,8vw,46px);margin:4px 0 8px;letter-spacing:-.02em}
+.hero small{opacity:.8;display:block}
+.grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}.grid .card{margin:0}
+.grid b{display:block;font-size:24px;margin-top:2px}.p{color:var(--g)}
+small{color:var(--m);font-size:12.5px}
+.row{display:grid;grid-template-columns:40px 1fr auto;gap:12px;align-items:center;padding:11px 6px;border-bottom:1px solid var(--l);cursor:pointer}
+.row:hover{background:#f5f8fb}.row:last-child{border:0}
+.row i{width:40px;height:40px;border-radius:50%;color:#fff;display:grid;place-items:center;font:600 16px sans-serif}
+.row .m b{display:block;font-weight:600;overflow-wrap:anywhere}.row .m small{display:block}
+.a{text-align:right;font-weight:600;white-space:nowrap}.a small{display:block;font-weight:400}
+.flt{display:grid;gap:10px;grid-template-columns:2fr 1fr 1fr}
+input,select{font:inherit;font-size:16px;padding:11px 12px;border:1px solid #cfd7e2;border-radius:10px;background:#fff;width:100%;color:var(--t)}
+.seg{display:flex;gap:8px;margin:12px 0 8px;flex-wrap:wrap}
+.seg button,.btn{font:inherit;font-weight:600;padding:10px 16px;border-radius:10px;border:1px solid var(--n);background:#fff;color:var(--n);cursor:pointer}
+.seg button.on,.btn.pri{background:var(--n);color:#fff}
+dl{display:grid;grid-template-columns:minmax(120px,1fr) 2fr;gap:0}dt,dd{padding:10px 0;border-bottom:1px solid var(--l)}dt{color:var(--m)}dd{font-weight:500;text-align:right;overflow-wrap:anywhere}
+svg{width:100%;height:80px;color:var(--n2)}
+.vcard{position:relative;max-width:390px;aspect-ratio:1.586;border-radius:20px;padding:22px;color:#e8ecf2;background:radial-gradient(circle at 20% 0,#5a6272 0,#2a2f39 38%,#12151b 75%);box-shadow:0 18px 40px #0b2a4a55,inset 0 0 0 1px #fff2;margin-bottom:18px}
+.chip{width:46px;height:34px;border-radius:7px;background:linear-gradient(135deg,#d9c48a,#9c8650)}
+.vs{position:absolute;right:22px;top:18px;font:italic 800 30px/1 Georgia,serif;letter-spacing:.02em}
+.vcard em{position:absolute;right:22px;top:54px;font:600 11px sans-serif;letter-spacing:.3em;font-style:normal}
+.num{position:absolute;left:22px;bottom:62px;font:500 20px/1 "SF Mono",Menlo,monospace;letter-spacing:.08em}
+.hold{position:absolute;left:22px;bottom:20px;font-weight:600;letter-spacing:.08em}.hold small{display:block;color:#aab;font-size:9px;font-weight:400}
+.mu{position:absolute;right:22px;bottom:20px;font-size:10px;opacity:.7}
+.f{display:grid;gap:14px;max-width:520px}.f label{display:grid;gap:5px;font-weight:600}.f label small{font-weight:400}
+.btns{display:flex;gap:10px;flex-wrap:wrap}#msg{font-weight:600;min-height:22px}#msg.err{color:#b42318}
+#modal{display:none;position:fixed;inset:0;background:#0b2a4a99;z-index:60;align-items:flex-end;justify-content:center}
+#modal.on{display:flex}
+.sheet{background:#fff;width:100%;max-width:520px;max-height:92vh;overflow:auto;border-radius:18px 18px 0 0;padding:20px;position:relative}
+.sheet .x{position:absolute;right:12px;top:8px;border:0;background:none;font-size:30px;cursor:pointer;color:var(--m)}
+.sheet .big{font-size:30px;font-weight:700;margin:2px 0 10px}
+footer{text-align:center;color:var(--m);font-size:12px;padding:10px 0 30px}
+@media(min-width:600px){#modal{align-items:center}.sheet{border-radius:18px}}
+@media(max-width:899px){:root{--h:56px}#nav{transform:translateX(-100%)}body.open #nav{transform:none}body.open #bd{display:block}main{margin:0;padding:14px}#burger{display:block}.flt{grid-template-columns:1fr}.demo .lg{display:none}}
+
+
+:root{--bg:#050506;--c:#0e0f11;--l:#212326;--t:#f1f2f4;--m:#8e939a;--g:#8fd3ab;--h:64px;color-scheme:dark}
+body{background:var(--bg);color:var(--t);accent-color:#fff}
+header{height:64px;background:#050506;border-bottom:1px solid var(--l);gap:12px}
+#burger{color:var(--t)}
+.crest{width:13px;height:13px;transform:rotate(45deg);border:1.5px solid #fff;margin:0 9px 0 6px}
+header b{font:500 15px/1.1 -apple-system,"Segoe UI",Helvetica,Arial,sans-serif;letter-spacing:.36em;text-transform:uppercase;color:#fff}
+header b span{display:block;font:400 9px -apple-system,sans-serif;letter-spacing:.55em;color:var(--m);margin-top:4px;opacity:1}
+#nav{background:#08080a;border-right:1px solid var(--l);padding-top:24px}
+#nav button{color:#9aa0a7;border-radius:6px;font-weight:400;letter-spacing:.03em}#nav button:hover{color:#fff;background:#ffffff08}
+#nav button.on{background:#ffffff0d;color:#fff;box-shadow:inset 2px 0 0 #fff}
+h2{font:500 11.5px/1 -apple-system,"Segoe UI",Helvetica,Arial,sans-serif;letter-spacing:.24em;text-transform:uppercase;color:var(--m);margin:32px 0 12px}main>h2:first-child{margin-top:6px}
+.hi{font:400 13px -apple-system,sans-serif;letter-spacing:.08em;color:var(--m);margin:2px 0 14px}
+small{color:var(--m)}
+.card{background:var(--c);border:1px solid var(--l);border-radius:14px;box-shadow:none}
+.hero{display:grid;grid-template-columns:1fr minmax(280px,430px);gap:36px;align-items:center;background:radial-gradient(circle at 90% 0,#1b1c1f,#09090a 65%);border:1px solid #26282b;border-radius:18px;padding:32px;box-shadow:0 30px 60px #000a;color:var(--t)}
+.hero::after{content:none}
+.hero h1{font:200 clamp(36px,8vw,58px)/1.1 -apple-system,"Segoe UI",Helvetica,Arial,sans-serif;letter-spacing:-.01em;background:none;color:#fff;margin:8px 0 16px}
+.hero small{color:var(--m);line-height:1.8}
+.vcw{max-width:440px;width:100%}.vcw .vc{width:100%;height:auto;display:block;filter:drop-shadow(0 24px 28px #000)}
+.grid .card{border-top:1px solid #34373c}.grid b{font:300 26px -apple-system,"Segoe UI",sans-serif}
+.p{color:var(--g)}
+.row{border-color:var(--l)}.row:hover{background:#ffffff07}
+.row i{background:#16171a!important;color:#e9eaec;font-family:-apple-system,"Segoe UI",sans-serif;box-shadow:0 0 0 1px #2c2e32}
+input,select{background:#09090a;color:var(--t);border:1px solid #2a2c30;border-radius:10px}input::placeholder{color:#6c727a}
+.seg button,.btn{background:none;color:var(--t);border:1px solid #34373c;border-radius:10px;font-weight:500}
+.seg button:hover,.btn:hover{background:#ffffff0a}
+.seg button.on,.btn.pri{background:#fff;color:#000;border-color:#fff}
+dt{color:var(--m)}dd{color:var(--t)}dt,dd{border-color:var(--l)}
+svg{color:#e8eaed}
+.err,#msg.err{color:#ff9a90!important}
+#modal{background:#000c}
+.sheet{background:#0d0e10;border:1px solid #2a2c30;border-top:1px solid #ffffff40;color:var(--t)}
+.sheet h3{font:500 20px -apple-system,"Segoe UI",sans-serif;color:var(--t)}.sheet .x{color:var(--m)}
+#toast{background:#16171a;border:1px solid #3a3d42;color:var(--t)}
+@media(max-width:899px){.hero{grid-template-columns:1fr;padding:18px;gap:20px}.hero .vcw{order:-1;margin:0 auto}header b{font-size:14px}}
+main{padding-bottom:max(24px,env(safe-area-inset-bottom))}</style></head><body>
+<header><button id="burger" aria-label="Menü">☰</button><span class="crest"></span><b>Meridian<span>Privatbank</span></b></header>
+<div id="bd"></div>
+<nav id="nav"><button data-go="dash">Dashboard</button><button data-go="tx">Umsätze</button><button data-go="acc">Kontodetails</button><button data-go="card">Visa-Karte</button><button data-go="set">Einstellungen</button></nav>
+<main id="main"></main>
+<div id="modal"></div><div id="toast"></div>
+<script>
+/* ===== DATENLOGIK (alle Beträge in ganzen Cent) ===== */
+const LKEY='pzbd.led',KEY='pzbd.v1',DEF={balance:78493.54,allow:55,min:4800,max:6500,extra:207,start:2023,keep:true};
+const MN=['Januar','Februar','März','April','Mai','Juni','Juli','August','September','Oktober','November','Dezember'];
+const e100=x=>Math.round(x*100);
+function load(){try{return{...DEF,...JSON.parse(localStorage.getItem(KEY)||'{}')}}catch(x){return{...DEF}}}
+function rng(a){return()=>{a=a+0x6D2B79F5|0;let t=Math.imul(a^a>>>15,1|a);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296}}
+const VAR=[
+[16,['PENNY','tegut','ALDI','Lidl'],'Lebensmittel',6,95],
+[6,['REWE','EDEKA','Kaufland','Netto'],'Lebensmittel',9,120],
+[4,['Amazon Marketplace'],'Online-Shopping',14,160],
+[3,['Renthof Kassel','Kaskadenwirtschaft Grischäfer'],'Restaurants',28,130],
+[4,["McDonald’s",'Burger King','Subway'],'Restaurants',7,24],
+[9,['Nenninger Café','Café Streiter','Starbucks','Tchibo'],'Cafés',3.2,14],
+[4,['Aral','Shell','Jet Tankstelle','Esso'],'Tankstellen',42,95],
+[2,['Apotheke Kassel'],'Apotheken',6,55],
+[1.5,['dm-drogerie markt','Rossmann'],'Drogerie',5,45],
+[2,['CineStar Kassel','Cineplex Capitol','Gloria Kino'],'Freizeit',12,48],
+[2,['Staatstheater Kassel','Kurhessen Therme','GRIMMWELT Kassel','Auebad Kassel'],'Freizeit',8,120],
+[3,['Geldautomat'],'Bargeld',50,300,'Bargeldabhebung'],
+[1.5,['KVG Kassel'],'Mobilität',3,12],
+[1.5,['Deutsche Bahn','Uber','FlixBus'],'Mobilität',9,120],
+[1.5,['Zalando'],'Mode',40,260],[1.2,['H&M'],'Mode',20,150],[.8,['Foot Locker'],'Mode',60,180],
+[.8,['MediaMarkt','Saturn'],'Elektronik',30,700],[.6,['Booking.com','Lufthansa','Airbnb'],'Reisen',180,1400]];
+const VW=VAR.reduce((s,v)=>s+v[0],0);
+const key=t=>((t.y*100+t.m)*100+t.d)*1440+t.t;
+function fin(T,S,op){T.sort((a,b)=>key(a)-key(b));const open=(S.keep!==false||op==null)?e100(S.balance)-T.reduce((s,t)=>s+t.c,0):op;let b=open;
+ T.forEach((t,i)=>{t.id=i+1;t.type=t.c>0?'Einnahme':'Ausgabe';b+=t.c;t.bal=b;t.ref='REF-'+String(i+1).padStart(5,'0')});return{tx:T,open,end:b}}
+function build(S,sh){
+ const R=rng(7919+S.start),rnd=(a,b)=>a+R()*(b-a),ri=(a,b)=>Math.floor(rnd(a,b+1)),pick=a=>a[Math.floor(R()*a.length)],T=[];
+ const add=(y,m,d,t,name,cat,c,meth,txt)=>T.push({y,m,d,t,name,cat,c,meth,txt});
+ const ct=n=>'Kartenzahlung '+n+' · Visa Infinite **** 4821';
+ for(let k=0;;k++){
+  const y=S.start+Math.floor((10+k)/12),m=(10+k)%12+1;if(y>2026||y==2026&&m>11)break;
+  const last=y==2026&&m==11,md=last?3:new Date(y,m,0).getDate(),mn=MN[m-1]+' '+y;
+  const g=Math.min(S.max,Math.max(S.min,Math.round(rnd(S.min,S.max)/50)*50));
+  add(y,m,last?2:ri(2,9),ri(360,560),'Heinrich Zeismann','Einkommen',e100(g),'Überweisung','Zuwendung Großvater '+mn);
+  if(S.allow>0)add(y,m,1,300,'Familie Zeismann','Einkommen',e100(S.allow),'Dauerauftrag','Taschengeld '+mn);
+  if(last&&S.extra>0)add(y,m,3,490,'Heinrich Zeismann','Einkommen',e100(S.extra),'Überweisung','Zusätzlicher Geldeingang '+mn);
+  let fx=0,lx=0;
+  [[1,'Hausverwaltung Kassel','Wohnen',1380,'Dauerauftrag','Miete '+mn],[4,'Städtische Werke Kassel','Wohnen',rnd(95,125),'Lastschrift','Abschlag Strom/Gas'],
+   [12,'Mobilfunk Vodafone','Abonnements',39.99,'Lastschrift','Mobilfunkvertrag'],[7,'Netflix','Abonnements',13.99,'Kartenzahlung','Streaming-Abo'],
+   [9,'Spotify','Abonnements',10.99,'Kartenzahlung','Musik-Abo'],[1,'NVV Deutschlandticket','Mobilität',y<2025?49:58,'Lastschrift','Monatsabo ÖPNV'],
+   [2,'McFit','Freizeit',49.9,'Lastschrift','Mitgliedsbeitrag'],[15,'Allianz Versicherung','Versicherungen',38.9,'Lastschrift','Beitrag '+mn]
+  ].forEach(([d,n,c,a,me,tx])=>{if(d<=md){a=e100(a);fx+=a;add(y,m,d,ri(420,900),n,c,-a,me,me=='Kartenzahlung'?ct(n):tx)}});
+  [[13,6,'HERMÈS',[690,890,1190,1450]],[9,4,'PRADA',[490,650,790,1090]]].forEach(([q,z,n,v])=>{
+   if(k%q==z){const a=e100(pick(v));lx+=a;add(y,m,ri(1,md),ri(660,1140),n,'Luxus & Mode',-a,'Kartenzahlung',ct(n))}});
+  let B=Math.round((rnd(.6,.76)+sh)*g*100)-fx-lx;B=last?15000:Math.max(30000,B);
+  for(let n=0,sp=0;n<90&&sp<B-1500;n++){
+   let r=R()*VW,v;for(v of VAR){if((r-=v[0])<0)break}
+   const[,nm,cat,lo,hi,me]=v,name=pick(nm),a=e100(me?Math.round(rnd(lo,hi)/10)*10:rnd(lo,hi));
+   if(!a||sp+a>B+4000)continue;sp+=a;
+   add(y,m,ri(1,md),ri(480,1260),name,cat,-a,me||'Kartenzahlung',me?'Bargeldabhebung Geldautomat · **** 4821':ct(name));
+  }
+ }
+ return fin(T,S);
+}
+function gen(S){let sh=0,o;for(let i=0;i<14;i++){o=build(S,sh);if(o.open>=250000&&o.open<=1500000)break;sh=Math.max(-.3,Math.min(.25,sh+(o.open<250000?.015:-.015)))}return o}
+let S=load(),LED=null;try{LED=JSON.parse(localStorage.getItem(LKEY)||'null')}catch(x){}
+let DB=LED&&LED.tx&&LED.tx.length?fin(LED.tx,S,LED.open):(LED=null,gen(S));
+//@@UI
+/* ===== DARSTELLUNG ===== */
+const $=s=>document.querySelector(s);
+const eur=c=>(c/100).toLocaleString('de-DE',{style:'currency',currency:'EUR'});
+const sg=c=>(c>0?'+':'−')+eur(Math.abs(c));
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const p2=n=>String(n).padStart(2,'0'),dt=t=>p2(t.d)+'.'+p2(t.m)+'.'+t.y,today=()=>{const n=new Date();return p2(n.getDate())+'.'+p2(n.getMonth()+1)+'.'+n.getFullYear()};
+const col=s=>'hsl('+([...s].reduce((a,c)=>a+c.charCodeAt(0)*37,0)%360)+' 42% 38%)';
+const sm=(a,inc)=>a.filter(t=>inc?t.c>0:t.c<0).reduce((s,t)=>s+Math.abs(t.c),0);
+const row=t=>`<div class="row" data-id="${t.id}"><i style="background:${col(t.cat)}">${esc(t.name[0])}</i><div class="m"><b>${esc(t.name)}</b><small>${esc(t.cat)} · ${dt(t)}</small></div><div class="a ${t.c>0?'p':''}">${sg(t.c)}<small>Saldo ${eur(t.bal)}</small></div></div>`;
+function spark(){const m={};DB.tx.forEach(t=>m[t.y*12+t.m]=t.bal);const v=Object.keys(m).sort((a,b)=>a-b).slice(-13).map(k=>m[k]),lo=Math.min(...v),rg=(Math.max(...v)-lo)||1;
+ return`<svg viewBox="0 0 300 70" preserveAspectRatio="none"><polyline fill="none" stroke="currentColor" stroke-width="2.5" vector-effect="non-scaling-stroke" points="${v.map((x,i)=>(i*300/(v.length-1||1)).toFixed(1)+','+(64-(x-lo)/rg*56).toFixed(1)).join(' ')}"/></svg>`}
+const dl=a=>'<dl>'+a.map(([k,v])=>`<dt>${k}</dt><dd>${v}</dd>`).join('')+'</dl>';
+function cardSvg(){const R=rng(20261107),T='font-family="-apple-system,\'Helvetica Neue\',Arial,sans-serif"';
+ const br=(a,b)=>{let o='';for(let y=0;y<340;y++){const r=R();o+=`<rect y="${y}" width="540" height="1" fill="${r>.5?'#fff':'#000'}" opacity="${(Math.abs(r-.5)*a).toFixed(3)}"/>`;if(R()<.35){const x=Math.floor(R()*400),w=60+Math.floor(R()*320);o+=`<rect x="${x}" y="${y}" width="${w}" height="1" fill="${R()>.5?'#fff':'#000'}" opacity="${(R()*b).toFixed(3)}"/>`}}return o};
+ const B=br(.16,.1),P=br(.5,.3);
+return`<svg class="vc" viewBox="0 0 540 340" role="img" aria-label="Visa Infinite The Black"><defs>
+<linearGradient id="cb" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#232427"/><stop offset=".5" stop-color="#0d0d0f"/><stop offset="1" stop-color="#18191b"/></linearGradient>
+<linearGradient id="sh" x1="0" y1="0" x2="1" y2=".3"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".24" stop-color="#fff" stop-opacity=".14"/><stop offset=".4" stop-color="#fff" stop-opacity="0"/><stop offset=".74" stop-color="#fff" stop-opacity=".06"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+<radialGradient id="vg" cx=".5" cy=".5" r=".75"><stop offset=".55" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".45"/></radialGradient>
+<linearGradient id="al" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#8d9299"/><stop offset=".22" stop-color="#e9ebee"/><stop offset=".5" stop-color="#a3a9b0"/><stop offset=".76" stop-color="#f2f3f5"/><stop offset="1" stop-color="#8d9299"/></linearGradient>
+<pattern id="alt" patternUnits="userSpaceOnUse" width="540" height="340"><rect width="540" height="340" fill="url(#al)"/>${P}</pattern>
+<clipPath id="cl"><rect width="540" height="340" rx="26"/></clipPath></defs>
+<rect width="540" height="340" rx="26" fill="url(#cb)"/>
+<g clip-path="url(#cl)">${B}<rect width="540" height="340" fill="url(#sh)"/><rect width="540" height="340" fill="url(#vg)"/><rect width="540" height="1.5" fill="#fff" opacity=".2"/></g>
+<rect x=".75" y=".75" width="538.5" height="338.5" rx="25.5" fill="none" stroke="url(#al)" stroke-opacity=".45" stroke-width="1.5"/>
+<rect x="4" y="4" width="532" height="332" rx="22" fill="none" stroke="#000" stroke-opacity=".45"/>
+<text x="44" y="70" font-size="21" font-weight="600" letter-spacing="9" fill="url(#alt)" ${T}>THE BLACK</text>
+<text x="496" y="68" font-size="10" letter-spacing="5" text-anchor="end" fill="#7d838b" ${T}>MERIDIAN</text>
+<g transform="translate(44 118)"><rect width="64" height="48" rx="9" fill="url(#alt)"/><g stroke="#202226" stroke-width="1" fill="none" opacity=".7"><path d="M0 16h20M0 32h20M44 16h20M44 32h20M20 0v48M44 0v48"/><rect x="20" y="14" width="24" height="20" rx="5"/></g></g>
+<g transform="translate(140 122)" fill="none" stroke="#c9cdd2" stroke-width="3" stroke-linecap="round" opacity=".85"><path d="M0 6q8 10 0 20"/><path d="M9 1q13 15 0 30"/><path d="M18 -4q18 20 0 40"/></g>
+<text x="44" y="262" font-size="17" letter-spacing="3.5" fill="#a4aab1" font-family="Menlo,Consolas,monospace">**** **** **** 4821</text>
+<text x="44" y="297" font-size="15" font-weight="500" letter-spacing="3.5" fill="url(#alt)" ${T}>PAUL ZEISMANN</text>
+<text x="498" y="284" font-size="50" font-weight="900" font-style="italic" text-anchor="end" fill="url(#alt)" ${T}>VISA</text>
+<text x="498" y="307" font-size="12" font-weight="600" letter-spacing="6.5" text-anchor="end" fill="url(#alt)" ${T}>INFINITE</text></svg>`}
+function dash(){const cm=DB.tx.filter(t=>t.y==2026&&t.m==11);
+ return`<p class="hi">Guten Tag, Herr Zeismann</p><div class="hero"><div class="hl"><small>Gesamtsaldo · Premium Privatkonto</small><h1>${eur(DB.end)}</h1><small>Paul Zeismann · **** 4821</small><small>Letzte Aktualisierung: ${today()}</small></div><div class="vcw">${cardSvg()}</div></div>
+ <div class="grid"><div class="card"><small>Einnahmen November 2026</small><b class="p">${eur(sm(cm,1))}</b></div><div class="card"><small>Ausgaben November 2026</small><b>${eur(sm(cm,0))}</b></div><div class="card"><small>Aktueller Kontostand</small><b>${eur(DB.end)}</b></div></div>
+ <div class="card" style="margin-top:16px"><small>Kontoverlauf, letzte 13 Monatsenden</small>${spark()}</div>
+ <h2>Letzte Buchungen</h2><div class="card">${DB.tx.slice(-8).reverse().map(row).join('')}<div class="btns" style="margin-top:12px"><button class="btn" data-go="tx">Alle Umsätze anzeigen</button></div></div>`}
+let Q={q:'',y:'',t:'',s:'d-'},F=[],shown=0,io;
+function flt(){let ys='';for(let y=DB.tx[0].y;y<=DB.tx[DB.tx.length-1].y;y++)ys+=`<option ${Q.y==y?'selected':''}>${y}</option>`;
+ return`<div class="card"><div class="flt"><input id="q" type="search" placeholder="Händler oder Buchungstext suchen" value="${esc(Q.q)}"><select id="y"><option value="">Alle Jahre</option>${ys}</select>
+ <select id="s">${[['d-','Neueste zuerst'],['d+','Älteste zuerst'],['a-','Betrag absteigend'],['a+','Betrag aufsteigend']].map(([v,l])=>`<option value="${v}" ${Q.s==v?'selected':''}>${l}</option>`).join('')}</select></div>
+ <div class="seg">${[['','Alle'],['in','Einnahmen'],['out','Ausgaben']].map(([v,l])=>`<button data-t="${v}" class="${Q.t==v?'on':''}">${l}</button>`).join('')}</div><small id="cnt"></small></div><div class="card" id="list"></div><div id="sent"></div>`}
+function txv(){return'<h2>Umsätze</h2>'+flt()}
+function list(){const q=Q.q.trim().toLowerCase();
+ F=DB.tx.filter(t=>(!Q.y||t.y==Q.y)&&(!Q.t||((Q.t=='in')==(t.c>0)))&&(!q||(t.name+' '+t.cat+' '+t.txt+' '+t.meth).toLowerCase().includes(q)));
+ F.sort(Q.s=='d-'?(a,b)=>b.id-a.id:Q.s=='d+'?(a,b)=>a.id-b.id:Q.s=='a-'?(a,b)=>b.c-a.c:(a,b)=>a.c-b.c);
+ $('#cnt').textContent=F.length+(F.length==1?' Buchung gefunden':' Buchungen gefunden');
+ $('#list').innerHTML=F.length?'':'<small>Keine Buchungen gefunden. Suchbegriff oder Filter ändern.</small>';shown=0;more();
+ io&&io.disconnect();io=new IntersectionObserver(e=>{if(e[0].isIntersecting&&shown<F.length)more()},{rootMargin:'700px'});io.observe($('#sent'))}
+function more(){$('#list').insertAdjacentHTML('beforeend',F.slice(shown,shown+60).map(row).join(''));shown+=60;const s=$('#sent');if(io&&s){io.unobserve(s);io.observe(s)}}
+function acc(){const i=sm(DB.tx,1),o=sm(DB.tx,0),ok=DB.open+i-o==DB.end;
+ return`<h2>Kontodetails</h2><div class="card">${dl([['Kontoinhaber','Paul Zeismann'],['Bank','Meridian Privatbank'],['Kontotyp','Privatkonto · Premium Banking'],['Währung','Euro (EUR)'],['Kontoreferenz','**** 4821'],['Zeitraum der Historie','01.11.'+S.start+' bis '+today()],['Anzahl Buchungen',DB.tx.length],['Anfangsbestand',eur(DB.open)],['Summe Einnahmen','<span class="p">'+eur(i)+'</span>'],['Summe Ausgaben',eur(o)],['Aktueller Kontostand',eur(DB.end)],['Rechenprobe','Anfang + Einnahmen − Ausgaben = Endsaldo '+(ok?'✓':'✗')],['Letzte Aktualisierung',today()]])}</div>`}
+function card(){const cs=DB.tx.filter(t=>t.meth!='Überweisung'&&t.c<0&&t.y==2026&&t.m==11);
+ return`<h2>Visa-Karte</h2><div class="vcw">${cardSvg()}</div>
+ <div class="card">${dl([['Karteninhaber','Paul Zeismann'],['Kartennummer','**** 4821'],['Kartentyp','Visa Infinite · The Black'],['Status','Aktiv'],['Kartenumsätze Nov. 2026',eur(sm(cs,0))]])}</div>
+ <h2>Letzte Kartenumsätze</h2><div class="card">${DB.tx.filter(t=>t.txt.startsWith('Kartenzahlung')).slice(-6).reverse().map(row).join('')}</div>`}
+const fv=c=>(c/100).toFixed(2).replace('.',',');
+function set(){const f=(k,l,h,v)=>`<label>${l}<input id="s_${k}" inputmode="decimal" value="${v}"><small>${h}</small></label>`;
+ return`<h2>Einstellungen</h2><div class="card"><div class="f">${f('balance','Aktueller Gesamtsaldo (€)','Standard: 78.493,54',fv(DB.end))}${f('allow','Taschengeld monatlich (€)','Standard: 55',S.allow)}${f('min','Monatliches Einkommen Minimum (€)','Standard: 4.800',S.min)}${f('max','Monatliches Einkommen Maximum (€)','Standard: 6.500',S.max)}${f('extra','Zusätzlicher Eingang November 2026 (€)','Standard: 207',S.extra)}${f('start','Startjahr der Historie','2015 bis 2025, Verlauf beginnt im November. Standard: 2023',S.start)}
+ <label style="display:flex;gap:10px;align-items:flex-start;font-weight:500"><input type="checkbox" id="s_keep" ${S.keep!==false?'checked':''} style="width:20px;height:20px;margin-top:2px;flex:none"><span>Gesamtsaldo konstant halten<br><small>Bei Änderungen an Buchungen passt sich der Anfangsbestand an, der Endsaldo bleibt gleich.</small></span></label>
+ <div class="btns"><button class="btn pri" data-act="apply">Einstellungen übernehmen</button><button class="btn" data-act="reset">Standardwerte wiederherstellen</button></div><div id="msg"></div></div></div>
+ <h2>Buchungen bearbeiten</h2><div class="card"><small>Buchung antippen, um Datum, Händler, Kategorie oder Betrag zu ändern oder sie zu löschen. Änderungen werden gespeichert.</small><div class="btns" style="margin-top:10px"><button class="btn pri" data-act="eadd">+ Neue Buchung</button></div></div>${flt()}`}
+const num=v=>{v=String(v).replace(/[\s€]/g,'');if(v.includes(','))v=v.replace(/\./g,'').replace(',','.');return v===''?NaN:Number(v)};
+function msg(t,err){const m=$('#msg');if(m){m.textContent=t;m.className=err?'err':''}}
+let EID=0;
+const wr=(k,v)=>{try{localStorage.setItem(k,JSON.stringify(v))}catch(x){}};
+function saveLed(){LED={tx:DB.tx.map(({y,m,d,t,name,cat,c,meth,txt})=>({y,m,d,t,name,cat,c,meth,txt})),open:DB.open};wr(LKEY,LED)}
+function clearLed(){LED=null;try{localStorage.removeItem(LKEY)}catch(x){}}
+function toast(t){const e=$('#toast');e.textContent=t;e.classList.add('on');clearTimeout(toast.h);toast.h=setTimeout(()=>e.classList.remove('on'),3500)}
+function keepRender(){const y=scrollY;render();scrollTo(0,y)}
+function reset(){if(LED&&!confirm('Alle Änderungen und eigenen Buchungen verwerfen?'))return;S={...DEF};wr(KEY,S);clearLed();DB=gen(S);Q.y='';render();msg('Standardwerte wiederhergestellt. Endsaldo '+eur(DB.end)+'.')}
+function apply(){const g=k=>num($('#s_'+k).value),n={balance:g('balance'),allow:g('allow'),min:g('min'),max:g('max'),extra:g('extra'),start:Math.round(g('start')),keep:$('#s_keep').checked};let er='';
+ if(Object.values(n).some(isNaN))er='Bitte nur gültige Zahlen eingeben, z. B. 5.200,50.';
+ else if(n.min<0||n.max<0||n.allow<0||n.extra<0)er='Beträge dürfen nicht negativ sein.';
+ else if(n.min>n.max)er='Das Minimum darf nicht größer als das Maximum sein.';
+ else if(n.start<2015||n.start>2025)er='Das Startjahr muss zwischen 2015 und 2025 liegen.';
+ if(er)return msg(er,1);
+ const rg=['allow','min','max','extra','start'].some(k=>n[k]!==S[k]);
+ if(rg&&LED&&!confirm('Diese Änderung berechnet die Umsatzhistorie neu. Manuelle Buchungsänderungen gehen dabei verloren. Fortfahren?'))return;
+ S=n;wr(KEY,S);
+ if(rg||!LED){clearLed();DB=gen(S)}else{DB=fin(DB.tx,{...S,keep:S.keep||e100(S.balance)!==DB.end},DB.open);saveLed()}
+ Q.y='';render();msg('Einstellungen übernommen. '+DB.tx.length+' Buchungen, Endsaldo '+eur(DB.end)+'.')}
+function edit(id){const t=id?DB.tx[id-1]:{y:2026,m:11,d:3,t:600,name:'',cat:'Sonstiges',c:-1000,meth:'Kartenzahlung',txt:''};EID=id;
+ const o=(v,l,sel)=>`<option value="${v}" ${sel?'selected':''}>${l}</option>`;
+ $('#modal').innerHTML=`<div class="sheet"><button class="x" data-close aria-label="Schließen">×</button><h3>${id?'Buchung bearbeiten':'Neue Buchung'}</h3><div class="f" style="max-width:none;margin-top:12px">
+ <label>Datum<input id="e_d" type="date" value="${t.y}-${p2(t.m)}-${p2(t.d)}"></label><label>Uhrzeit<input id="e_t" type="time" value="${p2(Math.floor(t.t/60))}:${p2(t.t%60)}"></label>
+ <label>Art<select id="e_k">${o(1,'Einnahme',t.c>0)}${o(-1,'Ausgabe',t.c<=0)}</select></label>
+ <label>Händler / Absender<input id="e_n" value="${esc(t.name)}"></label>
+ <label>Kategorie<input id="e_c" list="cats" value="${esc(t.cat)}"></label><datalist id="cats">${[...new Set(DB.tx.map(x=>x.cat))].map(c=>`<option value="${esc(c)}">`).join('')}</datalist>
+ <label>Betrag (€)<input id="e_a" inputmode="decimal" value="${fv(Math.abs(t.c))}"></label>
+ <label>Zahlungsart<select id="e_m">${['Kartenzahlung','Überweisung','Lastschrift','Dauerauftrag','Bargeldabhebung'].map(m=>o(m,m,m==t.meth)).join('')}</select></label>
+ <label>Verwendungszweck<input id="e_x" value="${esc(t.txt)}"></label>
+ <div class="btns"><button class="btn pri" data-act="esave">Speichern</button>${id?'<button class="btn" data-act="edel">Löschen</button>':''}</div><div id="emsg" class="err" style="font-weight:600"></div></div></div>`;$('#modal').classList.add('on')}
+function esave(){const d=$('#e_d').value.split('-').map(Number),tm=($('#e_t').value||'12:00').split(':').map(Number),a=num($('#e_a').value),n=$('#e_n').value.trim(),k=+$('#e_k').value,me=$('#e_m').value;
+ if(d.length<3||d.some(isNaN)||d[0]<2000||d[0]>2035)return $('#emsg').textContent='Bitte ein gültiges Datum wählen.';
+ if(!n)return $('#emsg').textContent='Bitte Händler bzw. Absender eingeben.';
+ if(!(a>0))return $('#emsg').textContent='Bitte einen Betrag größer 0 eingeben.';
+ const r={y:d[0],m:d[1],d:d[2],t:tm[0]*60+tm[1],name:n,cat:$('#e_c').value.trim()||'Sonstiges',c:k*e100(a),meth:me,txt:$('#e_x').value.trim()||me+' '+n};
+ if(EID)Object.assign(DB.tx[EID-1],r);else DB.tx.push(r);
+ DB=fin(DB.tx,S,DB.open);saveLed();$('#modal').classList.remove('on');keepRender();toast('Buchung gespeichert · Endsaldo '+eur(DB.end))}
+function edel(){if(DB.tx.length<2||!confirm('Diese Buchung wirklich löschen?'))return;DB.tx.splice(EID-1,1);DB=fin(DB.tx,S,DB.open);saveLed();$('#modal').classList.remove('on');keepRender();toast('Buchung gelöscht · Endsaldo '+eur(DB.end))}
+function detail(id){const t=DB.tx[id-1],wd=new Date(t.y,t.m-1,t.d).toLocaleDateString('de-DE',{weekday:'long'});
+ $('#modal').innerHTML=`<div class="sheet"><button class="x" data-close aria-label="Schließen">×</button><small>Buchungsdetails</small><h3>${esc(t.name)}</h3><div class="big ${t.c>0?'p':''}">${sg(t.c)}</div>${dl([['Händler / Partner',esc(t.name)],['Buchungsdatum',wd+', '+dt(t)+', '+p2(Math.floor(t.t/60))+':'+p2(t.t%60)+' Uhr'],['Betrag',sg(t.c)],['Kategorie',esc(t.cat)],['Buchungsart',t.type+' · '+t.meth],['Kontostand nach Buchung',eur(t.bal)],['Verwendungszweck',esc(t.txt)],['Referenz',t.ref]])}</div>`;$('#modal').classList.add('on')}
+const views={dash,tx:txv,acc,card,set};let V='dash';
+function render(){$('#main').innerHTML=views[V]();
+ document.querySelectorAll('#nav button').forEach(b=>b.classList.toggle('on',b.dataset.go==V));if(V=='tx'||V=='set')list()}
+function go(v){V=v;document.body.classList.remove('open');render();scrollTo(0,0)}
+/* ===== EREIGNISSE ===== */
+document.addEventListener('click',e=>{const c=e.target.closest('[data-go],[data-id],[data-t],[data-act],[data-close],#burger,#bd,#modal');if(!c)return;
+ if(c.dataset.go)go(c.dataset.go);else if(c.dataset.id)(V=='set'?edit:detail)(+c.dataset.id);
+ else if(c.dataset.t!==undefined){Q.t=c.dataset.t;document.querySelectorAll('[data-t]').forEach(b=>b.classList.toggle('on',b==c));list()}
+ else if(c.dataset.act=='apply')apply();else if(c.dataset.act=='reset')reset();else if(c.dataset.act=='esave')esave();else if(c.dataset.act=='edel')edel();else if(c.dataset.act=='eadd')edit(0);
+ else if(c.id=='burger')document.body.classList.toggle('open');else if(c.id=='bd')document.body.classList.remove('open');
+ else if(c.id=='modal'&&e.target==c||c.dataset.close!==undefined)$('#modal').classList.remove('on')});
+document.addEventListener('input',e=>{if(e.target.id=='q'){Q.q=e.target.value;list()}});
+document.addEventListener('change',e=>{if(e.target.id=='y'){Q.y=e.target.value;list()}if(e.target.id=='s'){Q.s=e.target.value;list()}});
+document.addEventListener('keydown',e=>{if(e.key=='Escape')$('#modal').classList.remove('on')});
+render();
+</script></body></html>
